@@ -1,0 +1,16 @@
+<!-- TRAILER OVERLAY -->
+<div id="trailer-screen" style="position:fixed; inset:0; background:#000; z-index:5000; display:flex; align-items:center; justify-content:center;">
+    <video id="intro-vid" width="80%" autoplay muted>
+        <source src="PASTE_YOUR_DRIVE_DIRECT_LINK_HERE" type="video/mp4">
+        Your lab does not support cinematic playback.
+    </video>
+    <button onclick="skipTrailer()" style="position:absolute; bottom:30px; right:30px; background:none; border:1px solid #0f0; color:#0f0; padding:10px; cursor:pointer;">SKIP INTRO</button>
+</div>
+
+<script>
+    function skipTrailer() {
+        document.getElementById('trailer-screen').style.display = 'none';
+    }
+    // Auto-hide trailer after it finishes (e.g., 5 seconds)
+    document.getElementById('intro-vid').onended = skipTrailer;
+</script>
