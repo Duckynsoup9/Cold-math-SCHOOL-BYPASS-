@@ -1,0 +1,9 @@
+let d9bux = localStorage.getItem('d9bux_balance') || 0;
+
+// Every 5 minutes of "studying," you earn 10 D9BUX
+setInterval(() => {
+    d9bux = parseInt(d9bux) + 10;
+    localStorage.setItem('d9bux_balance', d9bux);
+    console.log("D9BUX DEPOSITED: " + d9bux);
+    document.getElementById('balance-display').innerText = "D9BUX: " + d9bux;
+}, 300000); 
