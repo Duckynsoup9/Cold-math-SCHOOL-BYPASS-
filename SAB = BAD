@@ -1,0 +1,12 @@
+// --- D9_ADMIN CHARACTER TRANSFORMER ---
+function updateCharacterModel(player) {
+    if (localStorage.getItem('BANNED') === 'true') {
+        // Replace their model with a low-poly Toilet or Noob
+        player.geometry = new THREE.BoxGeometry(1, 1, 1); // Simple block
+        player.material.color.setHex(0xFFFF00); // Bright "Noob" Yellow
+        
+        // Add a floating text label above them
+        const label = createFloatingText("CRINGE_POSTER");
+        player.add(label);
+    }
+}
