@@ -1,0 +1,21 @@
+<div id="boot-screen" style="position:fixed; inset:0; background:#000; color:#0f0; z-index:9999; display:flex; flex-direction:column; justify-content:center; align-items:center; font-family:monospace;">
+    <h1 id="boot-text"></h1>
+</div>
+
+<script>
+    const text = ">> INITIALIZING D9GH (Duckynsoup9 Game Hub)...\n>> LOADING SQUAD PERMISSIONS...\n>> BYPASSING BCPS FILTERS...\n>> ACCESS GRANTED.";
+    let i = 0;
+    
+    function typeEffect() {
+        if (i < text.length) {
+            document.getElementById("boot-text").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeEffect, 40);
+        } else {
+            setTimeout(() => {
+                document.getElementById("boot-screen").style.display = "none";
+            }, 1000);
+        }
+    }
+    typeEffect();
+</script>
