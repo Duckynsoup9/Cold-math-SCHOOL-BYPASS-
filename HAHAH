@@ -1,0 +1,22 @@
+const cringeQuotes = [
+    "I am a loyal subject of the Calvin Brainrot Empire...",
+    "Tucker is my glorious king and I am but a noob.",
+    "I enjoy eating cold math for breakfast, please forgive me.",
+    "D9STUDIO is the sun and I am just a dusty planet.",
+    "I am currently grinding for 9 years to pay my debt."
+];
+
+function forceCringeChat() {
+    if (localStorage.getItem('BANNED') === 'true') {
+        let randomCringe = cringeQuotes[Math.floor(Math.random() * cringeQuotes.length)];
+        
+        // This sends it to your "Dev View" chat box
+        sendToDevServer(`[BANLAND_PRISONER]: ${randomCringe}`);
+        
+        // Award the tiny 0.1 D9BUX
+        awardD9BUX(0.1);
+    }
+}
+
+// Every 30 seconds, they are forced to say something cringe
+setInterval(forceCringeChat, 30000);
