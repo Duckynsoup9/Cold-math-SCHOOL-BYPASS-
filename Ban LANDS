@@ -1,0 +1,25 @@
+<!-- THE BANLANDS PARDON SCREEN -->
+<div id="banlands-ui" style="background:#000; color:red; height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; font-family:monospace; text-align:center;">
+    <h1 style="font-size:50px; text-shadow: 0 0 20px red;">!! BANNED BY D9_ADMIN !!</h1>
+    <p>REASON: CALVIN PROPAGANDA DETECTED</p>
+    <hr style="width:50%; border:1px solid red;">
+    <h3>PARDON FEE: 1,000,000 D9BUX</h3>
+    <p>CURRENT BALANCE: <span id="ban-balance">0</span> D9BUX</p>
+    <button onclick="attemptPardon()" style="background:red; color:white; padding:10px 20px; border:none; cursor:pointer; font-weight:bold;">PAY PARDON FEE</button>
+</div>
+
+<script>
+    let balance = localStorage.getItem('d9bux_balance') || 0;
+    document.getElementById('ban-balance').innerText = balance;
+
+    function attemptPardon() {
+        if (balance >= 1000000) {
+            alert("PARDON ACCEPTED. RESETTING ACCESS...");
+            localStorage.setItem('d9bux_balance', balance - 1000000);
+            localStorage.removeItem('BANNED');
+            window.location.href = "index.html"; // Back to Ma-th.org
+        } else {
+            alert("INSUFFICIENT FUNDS. RETURN TO THE GRIND.");
+        }
+    }
+</script>
