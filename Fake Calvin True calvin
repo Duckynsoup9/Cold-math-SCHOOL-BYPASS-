@@ -1,0 +1,15 @@
+function awardD9BUX() {
+    let balance = parseFloat(localStorage.getItem('d9bux_balance')) || 0;
+    let isBanned = localStorage.getItem('BANNED') === 'true';
+
+    if (isBanned) {
+        // The Banlands Rate
+        balance += 0.1; 
+        console.log("BANLAND GRIND: +0.1 D9BUX. Progress: " + (balance / 1000000 * 100).toFixed(6) + "%");
+    } else {
+        // Team Tucker / Fan Rate
+        balance += 10.0; 
+    }
+
+    localStorage.setItem('d9bux_balance', balance.toFixed(1));
+}
