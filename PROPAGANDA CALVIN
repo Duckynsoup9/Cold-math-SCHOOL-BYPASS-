@@ -1,0 +1,16 @@
+const userName = localStorage.getItem('d9_username');
+
+// THE BANLANDS PROTOCOL
+if (userName.includes("Calvin") && userName.includes("Best")) {
+    alert("CRITICAL ERROR: PROPAGANDA DETECTED. BANNED BY D9_ADMIN.");
+    
+    // Send them to a blank screen or a boring reading site
+    window.location.href = "https://amiralearning.com"; 
+    
+    // Lock their browser from ever opening D9GH again
+    localStorage.setItem('BANNED', 'true');
+}
+
+if (localStorage.getItem('BANNED') === 'true') {
+    document.body.innerHTML = "<h1>404: DATA CORRUPTED BY BANLANDS</h1>";
+}
